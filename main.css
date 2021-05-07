@@ -137,12 +137,20 @@ li {
   display: none;
 }
 
+.contribution {
+  background-image: url(images/outbound.svg); 
+  background-position: center right;
+  background-repeat: no-repeat;
+  padding-right: 1em;
+  color: black;
+}
+
 .article {
   background-image: url(images/outbound.svg); 
   background-position: center right;
   background-repeat: no-repeat;
   padding-right: 1em;
-  text-decoration: none;
+  text-decoration: none; 
 }
 
 a {
@@ -161,7 +169,7 @@ a:active {
   color: #CCC;
 }
 a:-webkit-any-link {
-  color: #CCC;
+  color: #6e8d9c;
 }
 .no-after {
   margin-block-end: 0em;
@@ -223,3 +231,4 @@ a:-webkit-any-link {
   margin-left: 400px;
   margin-top: -5px;
 }
+

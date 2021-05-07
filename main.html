@@ -1,23 +1,74 @@
 <head>
   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-  <title>Algorithms Aren't The Solution</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <title>Algorithms Aren't The Solution, At Least Not Yet</title>
+  <script src="case2.js" defer>
+  </script>
+  
   <style>
     .main {
       width: 60%;
       margin: 0 auto;
     }
     #title {
+      margin-top: 300px;
       width: 70%;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .helper-text{
+      font-size: 12px;
+      font-style: itallic;
       font-family: 'Open Sans', sans-serif;
     }
     .body-text {
       float: right;
     }
+    sup {
+      line-height: 0;
+
+      /* The following rules (or similar) likely come from browser 
+       * style and are not needed
+       */
+      font-size: 0.83em;
+      font-family: 'Open Sans', sans-serif;
+      vertical-align: super;
+    }
+
     .profile-box {
       height: 390px;
     }
+    .dec-matrix {
+      width: 75%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .center-image {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    blockquote {
+      font-size: 20px;
+      color: #AAA;
+      font-family: 'Open Sans', sans-serif;
+      margin-left:32px;
+      border-left: 4px solid #CCC;
+      padding-left: 8px;
+    }
+    blockquote i {
+      color: #000;
+    }
+    cite {
+      margin-left: 60px;
+      font-size: 16px;
+      font-family: 'Open Sans', sans-serif;
+    }
     p {
+      font-size: 20px;
+      font-family: 'Open Sans', sans-serif;
+    }
+    img {
       font-size: 20px;
       font-family: 'Open Sans', sans-serif;
     }
@@ -27,9 +78,20 @@
     h2 {
       font-family: 'Open Sans', sans-serif;
     }
+    details {
+      font-family: 'Open Sans', sans-serif;
+    }
+    summary {
+      font-family: 'Open Sans', sans-serif;
+    }
     h1 strong {
       display: block;
       font-size: 75%;
+      opacity: 0.55;
+    }
+    h2 strong {
+      display: block;
+      font-size: 85%;
       opacity: 0.55;
     }
     h3 {
@@ -39,156 +101,255 @@
       font-family: 'Open Sans', sans-serif;
     }
     li {
+      font-size: 20px;
       font-family: 'Open Sans', sans-serif;
     }
+    .power-quote {
+      margin-top: 700px;
+      margin-bottom: 1000px;
+    }
+    .power-quote2 {
+      width: 55%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      margin-top: 400px;
+      margin-bottom: 300px;
+    }
+    .date {
+      background-image: url(./images/day.png);
+      background-size: 36px;
+      width: 65736px;
+      height: 36px;
+    }
+    
+    .short-date {
+      background-image: url(./images/day.png);
+      background-size: 36px;
+      width: 1080px;
+      height: 36px;
+    }
+    #caseB-long {
+      padding-top:5px;
+      padding-bottom:5px;
+      overflow-x: auto;
+      overflow-y: clip;
+      width: 100%;
+      height: 56px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    
+    #caseB-long::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .article {
+      background-image: url(./images/outbound.svg); 
+      background-position: center right;
+      background-repeat: no-repeat;
+      padding-right: 1em;
+      text-decoration: none;
+    }
+    
+    a {
+      text-decoration: none;
+    }
+    
+    a:-webkit-any-link {
+      color: gray;
+    }
+    .no-after {
+      margin-block-end: 0em;
+    }
+    
+    #caseB-long-indicator {
+      font-family: 'Open Sans', sans-serif;
+      background-color: rgb(146 123 123);
+      font-size: 20px;
+      font-weight: bold;
+      display: inline-block;
+      border-radius: 10px;
+      box-shadow: 5px 4px 5px 0px;
+      padding-top: 2px;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 14px;
+      position: -webkit-sticky;
+      position: sticky;
+      height: 15px;
+      left: 500px;
+      bottom: 59px;
+      width: 100px;
+      text-align: center;
+      margin-bottom: 5px;
+      margin-left: 400px;
+    }
+    
+    #caseB-short {
+      padding-top:5px;
+      padding-bottom:5px;
+      overflow-x: auto;
+      overflow-y: clip;
+      width: 100%;
+      height: 56px;
+    }
+    
+    #caseB-short-indicator {
+      font-family: 'Open Sans', sans-serif;
+      background-color: rgb(146 123 123);
+      font-size: 20px;
+      font-weight: bold;
+      display: inline-block;
+      border-radius: 10px;
+      box-shadow: 5px 4px 5px 0px;
+      padding-top: 2px;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 14px;
+      position: -webkit-sticky;
+      position: sticky;
+      height: 15px;
+      left: 500px;
+      bottom: 59px;
+      width: 100px;
+      text-align: center;
+      margin-bottom: 5px;
+      margin-left: 400px;
+    }
+    
   </style>
+  <!-- TODO change RGB value of indicators-->
+  <!-- outbound icon found on wikipedia -->
 </head>
+
 <body>
   <div class="main">
     <center>
-    <h1 id="title">Algorithms Aren't The Solution To A 
-      Broken Criminal Sentencing System, At Least Not Yet</h1>
-      <div style="font-size: 20px;">
+      <h1 id="title">Algorithms Aren't The Solution To A
+        Broken Criminal Sentencing System, At Least Not Yet</h1>
+      <div style="font-size: 20px; margin-bottom:800px;">
         <p><i><strong>By: Nick Karlovich</strong></i></p>
       </div>
     </center>
     <!--<img width="1000px" height="800px" src=".\images\firstdraft-cover.png"/> -->
     <div>
-        <p class="body-text">
-          A major problem within the U.S. Criminal Justice System is the inconsistency
-          and unpredicatability of judges and their decisions on what the correct 
-          punishment should be for any given crime.  There are countless news stories
-          showcasing how some criminals walk away from crimes with extremely leniant
-          punishments, while other criminals with similar cases will be sentenced with 
-          punishments that are absurdly harsh in comparision; so much so that you have
-          to wonder if the judges are just picking punishments at random.  It should
-          be noted that while unfair and inconsistent punishments can affect anybody,
-          black people are statiscally more likely to recieve longer prison sentences
-          than their white counterparts. [6]
+      <p class="body-text">
+        A major problem within the U.S. Criminal Justice System is the inconsistency
+        and unpredicatability of judges and their decisions on what the correct
+        punishment should be for any given crime. There are countless news stories
+        showcasing how some criminals walk away from crimes with extremely leniant
+        punishments, while other criminals with similar cases will be sentenced with
+        punishments that are absurdly harsh in comparision; so much so that you have
+        to wonder if the judges are just picking punishments at random. It should
+        be noted that while unfair and inconsistent punishments can affect anybody,
+        black people are statiscally more likely to recieve longer prison sentences
+        than their white counterparts.<sup><a href="#cite-6">6</a></sup>
+      </p>
+      <p> To get a sense of what kinds of injustices are handed out every day,
+        here are a few cases where the punishments handed out don't match the
+        crimes committed. These cases are by no means the only examples, they
+        are only a small sample of the inconsistencies that exist in our judicial system
+        as it stands today.
+      </p>
+      <hr>
+      <!-- https://www.youtube.com/watch?v=LhXMl_DRnXY 
+          maybe look into using this example of misjustice rather than only
+          rapes and innocent black men -->
+      <img align="left" width="400px;" height="400px;" style="margin: 0px 10px 0px 0px;" src=".\images\austin-smith-clem.png" />
+      <div class="profile-box">
+        <h2><strong><i>Name:</i></strong> Austin Smith Clem</h2>
+        <p><strong><i>Crime: </i></strong> Two accounts of rape of a 14 year old girl,
+          one account of rape of the same woman at age 18.</p>
+        <p><strong><i>Punishment: </i></strong> Clem was given 20 years in prison for
+          two of the rape counts and another 20 years for the final charge.
+          However, he was sentenced to probation rather than jail (which meant
+          he only served the time if he broke a much more lenient probation).
+          Clem would be free to live at home, but would have to check in with
+          a corrections officer every week, and was not required to register
+          as a sex offender.
         </p>
-        <p> To get a sense of what kinds of injustices are handed out every day, 
-          here are a few cases where the punishments handed out don't match the 
-          crimes committed.  These cases are by no means the only examples, they
-          are only a small sample of the inconsistencies that exist in our judicial system
-          as it stands today.
+      </div>
+      <hr>
+      <!-- TODO, find citation -->
+      <img align="right" width="400px;" height="400px;" style="margin: 0px 0px 0px 10px;" src=".\images\clarence-aaron.png" />
+      <div class="profile-box">
+        <h2><strong><i>Name:</i></strong> Clarence Aaron</h2>
+        <p><strong><i>Crime: </i></strong> Conspiracy to possess with intent to
+          distribute multiple kilograms of cocaine.</p>
+        <p><strong><i>Punishment: </i></strong> Clarence was given
+          three life without Parole (LWOP) sentences at the age of 23
+          for playing a minor role in two planned large drug deals –
+          one of which did not take place – in which he was not the buyer,
+          seller, or supplier of the drugs. He is still in jail for his charges.
         </p>
-        <hr>
-          <img align="left" width="400px;" height="400px;" style="margin: 0px 10px 0px 0px;" src=".\images\austin-smith-clem.png"/>
-          <div class="profile-box">
-            <h2><strong><i>Name:</i></strong> Austin Smith Clem</h2>
-            <p><strong><i>Crime: </i></strong> Two accounts of rape of a 14 year old girl,
-              one account of rape of the same woman at age 18.</p>
-            <p><strong><i>Punishment: </i></strong> Clem was given 20 years in prison for
-               two of the rape counts and another 20 years for the final charge.
-                However, he was sentenced to probation rather than jail which meant 
-                he only served the time if he broke a much more lenient probation).
-                 Clem would be free to live at home, but would have to check in with
-                  a corrections officer every week, and was not required to register
-                   as a sex offender.
-                 </p>
-          </div>
-         <hr>
-         <img align="right" width="400px;" height="400px;" style="margin: 0px 0px 0px 10px;" src=".\images\clarence-aaron.png"/>
-         <div class="profile-box">
-           <h2><strong><i>Name:</i></strong> Clarence Aaron</h2>
-           <p><strong><i>Crime: </i></strong> Conspiracy to possess with intent to 
-             distribute multiple kilograms of cocaine.</p>
-           <p><strong><i>Punishment: </i></strong> Clarence was given 
-             three life without Parole (LWOP) sentences at the age of 23 
-             for playing a minor role in two planned large drug deals – 
-             one of which did not take place – in which he was not the buyer, 
-             seller, or supplier of the drugs.  He is still in jail for his charges.
-                </p>
-          </div>
-          <hr>
-          <img align="left" width="400px;" height="400px;" style="margin: 0px 10px 0px 0px;" src=".\images\brock-turner-smaller.png"/>
-          <div class="profile-box">
-            <h2><strong><i>Name:</i></strong> Brock Turner</h2>
-            <p><strong><i>Crime: </i></strong> Two charges of rape, two charges 
-              of felony sexual assault, and one for attempted rape.  
-              Pleaded not guilty to all charges.</p>
-            <p><strong><i>Punishment: </i></strong> Turner was found guilty 
-              (while pleading not guilty) on 3 accounts of sexual assault but was
-               only given 6 months in prison and 3 years of probation.  He was also 
-               released from his already short prison sentence 3 months early.  
-               This was seen by many as an incredible injustice and a complete 
-               failing of the court system.
-            </p>
-           </div>
-           <hr>
-           <img align="right" width="400px;" height="400px;" style="margin: 0px 0px 0px 10px;" src=".\images\guy-frank.png"/>
-           <div class="profile-box">
-             <h2><strong><i>Name:</i></strong> Guy Frank</h2>
-             <p><strong><i>Crime: </i></strong> Multiple previous offenses,
-                the current offense, stealing 2 shirts, which was considered a 
-                felony before 2010.
-             </p>
-             <p><strong><i>Punishment: </i></strong> Under Louisiana’s multiple
-                offender law, Frank was sentenced to 23 years in prison, even 
-                though he had never committed a violent crime.  The Innocence 
-                Project New Orleans (IPNO) was able to appeal to the Orleans Parish 
-                District Attorney to secure Frank’s release from prison three 
-                years early.
-            </p>
-            </div>
-          <hr>
-        <details>
-          <summary>
-          Racial info
-          </summary>
-          ( [in progress thoughts] [don't read this, maybe just get the vibe for now]
-          Proponents of racial equiality groups will typically point to specific cases
-          where guilty white defendends will be given a lesser punishment for a crime,
-          whereas a similar guilty black defendent will be given a harsher punishment
-          for the same crime.  Personally, I do believe that this is an issue, but I
-          am not making this argument here as it cannot be shown and is outside the scope 
-          of this visualization.
-        
-          The statement that it is statistically correlated that your race has an independent affect
-          on the severity of a criminal punishment is a very bold statement, and one I will
-          not attempt to show here.  This fact is just very difficult to prove
-          due to there being so many variables.  There are not enough cases where enough of these
-          variables line up to draw any meaningful statistical conclusions (Judge, Race, Age,
-          Previous Criminal History, Crime, Location, Time, Guilt, Remorse, Intent, etc.))
-        
-         A major problem within the U.S. Criminal Justice System is the existence
-        of systematic bias in the sentencing of criminals of different races.  Now this can't
-        be proved mathematically or with any true statistical signifigance.  
-        
-        Black
-         individuals are more likely to be get longer prison sentences and be 
-         considered "higher risk" compared to white individuals with similar criminal
-          histories.  This was proven 
-      </details>
-        <p class="body-text">
-          But this disparity, this <strong><i>bias</i></strong> in sentencing 
-          exists beyond our own experiences, beyond the news cycle that promotes
-          the most extreme injustices and controversies.
-          It has been shown how inconsistent and unpredicatable the judicial
-          system can be when they hand out punishments.  In a study involving 47 virgina 
-          district attorneys, each judge was given 
-          5 fabricated cases and were told to determine the guilt of the defendant
-          and if found guilty, determine the appropriate sentence.
-          Here are the results of two of those cases as examples:
+      </div>
+      <hr>
+      <img align="left" width="400px;" height="400px;" style="margin: 0px 10px 0px 0px;" src=".\images\brock-turner-smaller.png" />
+      <div class="profile-box">
+        <h2><strong><i>Name:</i></strong> Brock Turner</h2>
+        <p><strong><i>Crime: </i></strong> Two charges of rape, two charges
+          of felony sexual assault, and one for attempted rape.
+          Pleaded not guilty to all charges.</p>
+        <!-- typically when you plead not guilty and are found guilty, the punishments
+          are harsher.  I'd hate to see what he would've gotten if he'd pled guilty and gotten 
+          an even more reduced sentence -->
+        <p><strong><i>Punishment: </i></strong> Turner was found guilty
+          (while pleading not guilty) on 3 accounts of sexual assault but was
+          only given 6 months in prison and 3 years of probation. He was also
+          released from his already short prison sentence 3 months early.
+          This was seen by many as an incredible injustice and a complete
+          failing of the court system.
         </p>
-        <h1>
-          Case A:
-          <strong>Marijuana Presence</strong>
-        </h1>
-        <p class="body-text">
-          <strong>Description:</strong>
-          An eighteen year old female defendant was apprehended for possession
-of marijuana. She was arrested with her boyfriend and seven other acquaintances. Evidence
-of a substantial amount of smoked and unsmoked marijuana was found; however, no
-marijuana was discovered directly on the defendant's person. She had no previous criminal 
-record, was a good student from a middle class home and was neither rebellious nor apologetic
-for her actions.
+      </div>
+      <hr>
+      <img align="right" width="400px;" height="400px;" style="margin: 0px 0px 0px 10px;" src=".\images\guy-frank.png" />
+      <div class="profile-box">
+        <!-- TODO fact check he never committed a violent crime -->
+        <h2><strong><i>Name:</i></strong> Guy Frank</h2>
+        <p><strong><i>Crime: </i></strong> Multiple previous offenses,
+          the current offense, stealing 2 shirts, which was considered a
+          felony before 2010.
         </p>
-        <p>
-          <strong>How the 47 Judges voted:</strong>
+        <p><strong><i>Punishment: </i></strong> Under Louisiana’s multiple
+          offender law, Frank was sentenced to 23 years in prison, even
+          though he had never committed a violent crime. The Innocence
+          Project New Orleans (IPNO) was able to appeal to the Orleans Parish
+          District Attorney to secure Frank’s release from prison three
+          years early.
         </p>
-        <img width="100%" src="./images/Case1v3.png"/>
-        <!--
+      </div>
+      <hr>
+      <p class="body-text">
+        But this disparity, this <strong><i>bias</i></strong> in sentencing
+        exists beyond our own experiences, beyond the news cycle that promotes
+        the most extreme injustices and controversies.
+        It has been shown how inconsistent and unpredicatable the judicial
+        system can be with their punishments. In a study involving 47 virgina
+        district attorneys, each judge was given
+        5 fabricated cases and were told to determine the guilt of the defendant
+        and if found guilty, determine the appropriate sentence.
+        Here are the results of two of those cases as examples:
+      </p>
+      <h1>
+        Case A:
+        <strong>Marijuana Presence</strong>
+      </h1>
+      <p class="body-text">
+        <strong>Description:</strong>
+        An eighteen year old female defendant was apprehended for possession
+        of marijuana. She was arrested with her boyfriend and seven other acquaintances. Evidence
+        of a substantial amount of smoked and unsmoked marijuana was found; however, no
+        marijuana was discovered directly on the defendant's person. She had no previous criminal
+        record, was a good student from a middle class home and was neither rebellious nor apologetic
+        for her actions.
+      </p>
+      <p>
+        <strong>How the 47 Judges voted:</strong>
+      </p>
+      <img width="100%" src="./images/Case1v3.png" />
+      <!--
           twenty-nine voted not guilty (61.7%)
           eighteen voted guilty (38.3%)
           - 8 (44.4%) probation
@@ -199,20 +360,20 @@ for her actions.
           -> should above percentages be of total likelyhood or likelyhood of
           if you are already found guilty.
         -->
-        <p>
-          This outcome flies in the face of the entire intent of the judicial system!
-          A tennent of the U.S. judicial system is that every defendant is innocent
-          until proven guilty.  This is because courts would rather let a
-          known criminal go free rather than put an innocent person behind bars (Blackstone's Ratio[3]).
-          It is absolutely ludicris that if you were in this situation, you would 
-          have to roll the celestial d20 (twenty sided die) and on a 1 (5% ≈ 6.3%)
-          you go to jail, while 12 others get off with a spotless record, purely 
-          because fate willed it.  These inconsistencies are crazy and 
-          unnacceptable no matter who is on the receiving end of it.
-        </p>
-        
-        
-        <!--
+      <p>
+        This outcome flies in the face of the entire intent of the judicial system!
+        A tennent of the U.S. judicial system is that every defendant is innocent
+        until proven guilty. This is because courts would rather let 10
+        known criminals go free rather than put 1 innocent person behind bars (Blackstone's Ratio<sup><a href="#cite-3">3</a></sup>).
+        It is absolutely ludicris that if you were in this situation, you would
+        have to roll the celestial d20 (twenty sided die) and on a 1 (5% ≈ 6.3%)
+        you go to jail, while 12 others get off with a spotless record, purely
+        because fate willed it. These inconsistencies are crazy and
+        unnacceptable no matter who is on the receiving end of it.
+      </p>
+
+
+      <!--
           <ul>
             <li>61.7% chance of having a clean record, </li>
             <li>17% chance of going on probation</li>
@@ -228,50 +389,64 @@ for her actions.
           possible punishments is extreme.
         </p>
           -->
-          
-        <h1>
-          Case B:
-          <strong>Father-Son Theft</strong>
-        </h1>
-        
-        <p class="body-text">
-          <strong>Description:</strong>
-          Residents of a
-household returned home to find their television set missing, and, hearing a noise, noticed
-two persons carrying a large object down the
-street. Soon afterwards, officers arrested a
-forty-six year old man and his son, who were
-pawning the TV set, which was identified by
-its serial numbers. The father, whose fingerprints matched those found in the house, had
-four previous convictions for petty larceny, one
-for reckless driving and one for assaulting a
-police officer. The son had only one traffic
-conviction and claimed his father had told him
-a friend gave him the television set.
-</p>
-<h4>
-Due to how this case is worded only 31 of the judges gave a sentencing for the father
-(the other 16 certified to grand jury) [figure out what the hell this means]
-</h4>
-<img src="./images/Case2v2.png"/>
-            <!--
+
+      <h1>
+        Case B:
+        <strong>Father-Son Theft</strong>
+      </h1>
+
+      <p class="body-text">
+        <strong>Description:</strong>
+        Residents of a
+        household returned home to find their television set missing, and, hearing a noise, noticed
+        two persons carrying a large object down the
+        street. Soon afterwards, officers arrested a
+        forty-six year old man and his son, who were
+        pawning the TV set, which was identified by
+        its serial numbers. The father, whose fingerprints matched those found in the house, had
+        four previous convictions for petty larceny, one
+        for reckless driving and one for assaulting a
+        police officer. The son had only one traffic
+        conviction and claimed his father had told him
+        a friend gave him the television set.
+      </p>
+      <!-- TODO add alt text to images -->
+      <img src="./images/Case2v4.png" style="width:100%;" onclick="short()"/>
+      <p style="float:right;"> = 1 Day in Jail</p><img src="./images/day.png">
+      <!-- code here to show percentage by mkorostoff https://mkorostoff.github.io/1-pixel-wealth/ -->
+      <h3 class="no-after"> <i>Minimum Sentence </i></h3>
+      <div id="caseB-short" style="width:100%;">
+        <div class="short-date"></div>
+        <div id="caseB-short-indicator">1 Month</div>
+      </div>
+      
+      <h3 class="no-after"> <i>Maximum Sentence</i><div class="helper-text">Use Shift + Scroll wheel to move horizontally</div> </h3> 
+      <div id="caseB-long" style="width:100%;">
+        <div class="date"></div>
+        <div id="caseB-long-indicator">1 Month</div>
+      </div>
+      <!--
 of those 31 who gave sentences, all found the father guilty, 26 of those decided that
 the father deserved jail time, and 13 of them also included a fine. (the other 5 gave
 different sentences)
     -->
-    <p>
-      The point to note here is punishment.  While all the judges agreed that
-      the father was guilty, the punishments given by the judges have an astionishing
-      amount of variability.
-      
-      At least one judge suggested that the father should face 1 month of jail time
-      and a $100 fine for his crime, and on the opposite side of the spectrum, at least
-      one other judge handed down a sentence of 5 years in jail.  That is a
-      disparity between punishments by over 60x (1 month vs 12 months in a year * 5 years)
-    </p>
-        
-        
-        <!--<p class="body-text">
+    <!-- TODO, maximum sentence and minimum sound like for stealing in general, make that clearer -->
+      <p>
+        The point to note here is punishment. While all the judges agreed that
+        the father was guilty, the punishments given by the judges have an astonishing
+        amount of variability.
+
+        The minimum sentence given by the group was a jail sentence of 1 month, and a $100
+        fine. The largest prescribed sentence for the <b>exact same case</b> was 60 months.
+
+        Regardless of what the "correct" punishment should be, the range of possible
+         jail terms is extremely large, too large for what we should expect and want from
+        our justice system.
+      </p>
+
+      <p>
+        <!--
+      <p class="body-text">
 Within the same case, there were also conflicting decisions on the son's
 guilt.
 
@@ -280,46 +455,64 @@ the son innocent. Even amongst the judges who found the son guilty, some
 advised for full jail terms, while others suggested suspended jail terms (no jail time
 contingent on something, typically community service or keeping a clean record)
       </p> -->
-      <p class="body-text">
-These two fictional cases highlight the main issue many people see with the 
-justice system, it is impossible for our judges to view cases in the exact same way, 
-resulting in these incredible discrepencies where based on your judge, you could
-walk free, or be sentenced to jail. And even when the judges agree that you deserve
-jailtime  the amount 
-of time for any given crime could vary from 1 month up to 60x that amount at 5 years.
       </p>
-      <p class="body-text">
-So, there's an issue between judges, each judge has their opinions and ideas which
-will influence how they decide on cases.  These differences in opinion are impossible 
-to remove from the court system without removing a human judge from the equation entirely 
-and I'm not quite sure we'd want to remove the human element anyways.  That's part of
-what a court is, the idea going back to the Magna Carta in 1297, that a courtroom should
-consist as a jury of one's own peers, not one person reading word-for-word the laws from a book.
-So, removing the humans from the courtroom entirely is out of the question and 
-due to human nature it is likely that we will never have variation in sentencing,
-  </p>
-  <p> but at least judges make consistent decisions in the cases they do see ...
-<!--Unless there were some way to keep the human element while making decisions across judges more consistent. -->
-    </p>
       <p>
-      <strong><i>
-        But, what if judges aren't even consistent against themselves?
-      </i></strong>
+        These two fictional cases highlight the main issue many people see with the
+        justice system. It is impossible for our judges to view cases in the exact same way,
+        resulting in these incredible discrepencies where based on your judge, you could
+        walk free, or be sentenced to jail. And even when the judges agree that you deserve
+        jailtime, there is a chasm of difference in the length of the sentence that you could recieve.
       </p>
-        <p class="body-text">
-          In a more recent study 81 UK judges were asked to give bail to 
-          41 fictious cases. [hello world]  Unbeknownst to the judges, hidden amongst 
-          the 41 cases were 7 cases that
-          were duplicates of earlier cases with only the names changed.  
-          Most judges didn't manage to make the same decision on the same case when 
-          seeing it for the second time.  Astonishingly, some judges did no better
-          than matching their own answers than if they were, quite literally, awarding
-          bail at random.[direct quote Hello World]
-        </p>
+      <p>
+        So, there's an issue between judges, each judge has their opinions and ideas which
+        will influence how they decide on cases. These differences in opinion are impossible
+        to remove from the court system without removing a human judge from the equation entirely
+        and I'm not quite sure we'd want to remove the human element anyways.
+
+        The "human factor" of a courtroom goes back to the Magna Carta in 1297,
+        which said that a courtroom should consist as a jury of one's own peers (including the judge),
+        not one person reading word-for-word the laws from a book.
+        So, removing the humans from the courtroom entirely is out of the question with
+        current technologies and
+        due to human nature, it is unlikely that we will see any changes in these
+         extreme discrepencies without some external tool to help guide us.
+      </p>
+      <!-- big spacing here to make this quote the only one on the page -->
+      <p class="power-quote">But at least judges are consistent in their sentencing within their own courtroom ... <b><i>right?</i></b>
+      </p>
+      <!-- big spacing here to make this quote the only one on the page -->
+      <!--<p> but at least judges make consistent decisions in the cases they do see ... <b><i>right?</i></b>
+      </p>-->
+      <!--
+      <p>
+        <strong><i>
+            But, what if judges aren't even consistent against themselves?
+          </i></strong>
+      </p>
+        -->
+      
+      <blockquote>
+        In a more recent study, 81 UK judges were asked whether they'd give bail to
+        41 fictious defendants.<sup><a href="#cite-15">15</a></sup> Each hypothetical case had its own imaginary back-story and
+         imaginary criminal history.  Just like their counterparts in the Virgina study,
+        the British judges failed to agree unanimously on a single one of the 41 
+        cases presented to them.<sup><a href="#cite-16">16</a></sup> But this time, in among the 41 hypothetical cases
+        given to every judge were seven that appeared twice - with the names of the 
+        defendants changed on their second appearance so the judge wouldn't notice
+        they'd be duplicated.  Most judges didn't manage to make the same
+        decision on the same case when seeing it for the second time. Astonishingly,
+         some judges did no better than matching their own answers than if 
+         they were, quite literally, awarding bail at random.<sup><a href="#cite-17">17</a></sup>
+        <br>
+        <br>
+        <i>Hannah Fry - Hello World, Being Human in the Age of Algorithms (2018)</i>
+      </blockquote>
+      <cite> </cite>
+      
 
 
 
-<!--<<maybe not include>>
+      <!--<<maybe not include>>
           In real world cases
            other seemingly random events have been shown to
           have correlation with the outcomes of cases
@@ -334,24 +527,40 @@ due to human nature it is likely that we will never have variation in sentencing
           Another famous study showed that an individual judge will avoid making too many similar judgements
           in a row.  Your chances therefore of being award bail drop off a cliff if four successful cases
           were heard immediately before yours[64]"
--->      
-<br>
-          <p>
-          There's disagreement when deciding the guilt
-          of a case amongst different judges, and when the judges agree on the guilt,
-          there's extreme disagreements about how severe the punishments should be.
-          Even against themselves, judges have shown that more often than not, they will
-          not make the same decision on two duplicate cases.
-          So, now it's understandable why there is a push in society today
-          to make the courts more fair.  With this being the age of the computer;
-          Algorithms, machine learning, and AI are being explored as possible soultions
-          to the problem of inconsistent sentencing. But before we get to that topic, lets look at 
-          how algorithms have been used in other fields to fix problems that humans couldn't do alone.
-          </p>
-          
+-->
+      <br>
+      <p>
+        Not only is there's disagreement between judges when deciding the guilt of defendants in identical
+        cases, but even when they do come to a concensus, the sentencing by those judges
+        can also very wildly in severity. Justice is supposed to be blind, and give
+        a fair and consistent trial, but it is obvious that the court system as it
+        stands today does not do that. Thankfully the U.S. justice system has started
+        to realize this and some justice departments around the U.S. has started
+        to implement systems to counteract biases and inconsistencies, especially
+        those correlated to racial and ethic bias.<sup><a href="#cite-9">9</a></sup>
+      </p>
+      <p>
+        Recently, many different organizations across different disciplines have
+        started using AI / Machine Learning to solve problems and push our
+        society to new heights.
+
+        Some ideas have worked better than others:
+      </p>
+      Bad:
+      picture of TayAI chat bot
+      some algorithm that caused a huge problem (popular if possible)
+
+      Good:
+      Watson or Deep Blue
+      Boston Dynamics
+      <p>
+        Lets look at two examples where algorithms have been integrated very successfully,
+        into different disciplines and have had great success improving the efficiency
+        and accuracy of their disciplines.
     </div>
-    <!-- News articles of people getting criminally long sentences when not needed -->
-    <!-- <img src="images/black-vs-white-compas-scores.png">[1]</img>
+    <div class="collapse">
+      <!-- News articles of people getting criminally long sentences when not needed -->
+      <!-- <img src="images/black-vs-white-compas-scores.png">[1]</img>
     <p>
       The exact reasoning behind why this is cannot be determined, but there are 
       possible reasons as to why human judges don't perform well when trying to fairly
@@ -413,356 +622,495 @@ due to human nature it is likely that we will never have variation in sentencing
       So, before we get into algorithms for use in the courtroom. Lets take a look
       at how other fields of study have integrated algorithms into their work.
     </p>
---> 
-  <div>
-    <div style="width:50%; float:left;">
-      <h2> Algorithms for detecting breast cancer </h2>
-      <p>
-        PathAI: [3]https://www.pathai.com/what-we-do/
-
-        An algorithm that assists a pathologist's cancer diagnosis process by reducing 
-        the amount of time each diagnosis took.  The algorithm's introduction produced
-
-
-        doctors are about 96% accurate in detecting cancers
-        pg 88, (missed 27% of smaller hidden instances of cancer), 
-        Never had a (false positive)
-
-        best of algorithms from (CAMELBAK16) was 92.4% accurate, but with 8 false positives
-
-        Combining these two together though, results in a 99.5% accuracy rating, with no false positives.
-      </p>
+-->
     </div>
-    <div style="width:50%; height:300px; float:right;">
-    <h2> Intelligent Path Creation Algorithms </h2>
+    <hr>
+    <div>
 
-    <p> An algorithm that helps delivery truck drivers take more efficient routes when 
-      delivering packages.
+      <div style="width:49%; float:left; margin-right:10px; height:725px;">
+        <h2>
+          Algorithms for Detecting Cancerous Cells
+          <strong><a class="article" href="https://www.pathai.com/what-we-do/" target="_blank">PathAI</a></strong>
+          <i class="icon-outboundLink"></i>
+        </h2>
+        <p>
+          <strong><i>Problem: </i></strong>
+          Before PathAI, cancer screenings were typically done by a pathologist.
+          The pathologist's job was to look at hundreds of slides a day, each with hundreds of thousands
+          of cells, and determine if any slide contained cancer. This process was
+          often slow, tedious, and could be innaccurate (only 96% accurate), but rarely
+          ever did pathologists commit a false positive.
+          This is where PathAI came in.
+          They developed an machine learning algorithm that was extremely good at
+          spotting every single cancerous cell on a slide. Unfortunately, it would also
+          misclassify healthy cells as cancerous at an unnacceptable rate (total accuracy
+          of 92% with 8 false positives).
+          <strong><i><br><br>Solution: </i></strong>
+          To combat this, they paired the pathologist
+          up with the algorithm such that
+          the AI would point out all the areas of interest for the pathologist, and
+          the pathologist would make the final determination of if any particular cell
+          was cancerous or not.
 
-      Most notably these algorithms figured out important patterns to traffic in cities
-      and have allowed companies like USPS/UPS/FedEx to deliver more packages quicker and 
-      more efficiently.
-    </p>
+          This method of having the algorithm and pathologist working together,
+          resulted in a 99.5% accuracy rating, with no false positives.
+        </p>
+      </div>
+      <div style="width:49%; float:right; margin-left:10px; height:725px;">
+        <h2>
+          Intelligent Path Creation Algorithms
+          <strong><a class="article" href="https://www.ups.com/us/en/services/knowledge-center/article.page?kid=aa3710c2" target="_blank">UPS ORION</a></strong>
+        </h2>
+        <p>
+          <strong><i>Problem: </i></strong>
+          For many years, delivery truck drivers would make routes based mostly on intuition.
+          This worked well for a long time, but UPS realized that it could save a
+          lot of money and emissions by making delivery paths shorter. UPS estimates
+          that it can save US$50 million a year by reducing by one mile the
+          average aggregated daily travel of its drivers.
+          <strong><i><br><br>Solution: </i></strong>
+          Thus ORION (On-Road Integrated Optimization and Navigation) was born.
+          To calculate the driver's routes, the ORION system takes into consideration variables
+          such as the stops for the day, previous route data, and weather data. It
+          also takes input from drivers on road closures or changing road conditions,
+          that can only be accounted for on-the-fly. The combination of an incredibly
+          intelligent algorithm such as ORION and the intuition and expertise of
+          UPS drivers has resulted in ORION being massively successful. By the
+          end of 2016 it had saved 10 million gallons of fuel each year, reduced 100,1000
+          metric tons of carbon dioxide emissions and saved an estimated $300 to $400 million
+          in cost avoidance.<sup><a href="#cite-5">5</a></sup>(direct quote)
+        </p>
+
+      </div>
     </div>
-  </div>
-  <div>
-    <br>
-    <h3>
-      <strong> So now that we've seen the kinds of ways that algorithms can be used to 
-        solve problems that humans can't do well, lets put together what our <i>ideal</i>
-        algorithm would have
-      </strong>
-    </h3>
+    <hr>
+    <div>
+      <br>
+      <h3>
+        <strong> So now that we've seen the kinds of ways that algorithms can be used to
+          solve problems that humans can't do well, lets put together what our <i>ideal</i>
+          algorithm would have
+        </strong>
+      </h3>
 
-  <details>
-    <summary>Important for later</summary>
-      There is an important distinction between these algorithms, PATH AI and
-      intelligent path creation. and the COMPAS algorithm.
+      <details>
+        <summary>Important for later</summary>
+        There is an important distinction between these algorithms, PATH AI and
+        intelligent path creation. and the COMPAS algorithm.
 
-      PathAI and intelligent path creation cannot run on its own.  They require 
-      human interaction to run
+        PathAI and intelligent path creation cannot run on its own. They require
+        human interaction to run
 
-      I fhte path AI went on its own, it would misdiagnose 8% of the people it scanned (not good, cite)
+        I fhte path AI went on its own, it would misdiagnose 8% of the people it scanned (not good, cite)
 
-      if the intelligent path creation algorithm tried to run on its own, it
-      would fail because it doesn't know the rules of the road, and couldn't react
-      to rapidly changing road conditions.
+        if the intelligent path creation algorithm tried to run on its own, it
+        would fail because it doesn't know the rules of the road, and couldn't react
+        to rapidly changing road conditions.
 
 
-      Compare this to the COMPAS algorithm.  It's new enough yet where the algorithm 
-      isn't fully trusted on its own but that level of trust is rapidly approaching.
+        Compare this to the COMPAS algorithm. It's new enough yet where the algorithm
+        isn't fully trusted on its own but that level of trust is rapidly approaching.
 
-      The downsides to the other algorithms (people being misdiagnosed and car crashes)
-      are much more visible to us than the downsides of the algorithm (racial biased
-      steryotyping, etc.)  And why wouldn't judges want to use COMPAS to make their decisions
-      for them.  Besides making their job easier, it gives the judges an easy get-out-of-jail free card
-      if the algorithm misbehaves.  "Oh I didn't sentence that person to the death 
-      penalty for jaywalking, it was the algorithm, it wasn't my fault.  The algorithm,
-      is smarter than me so I trusted it..."
+        The downsides to the other algorithms (people being misdiagnosed and car crashes)
+        are much more visible to us than the downsides of the algorithm (racial biased
+        steryotyping, etc.) And why wouldn't judges want to use COMPAS to make their decisions
+        for them. Besides making their job easier, it gives the judges an easy get-out-of-jail free card
+        if the algorithm misbehaves. "Oh I didn't sentence that person to the death
+        penalty for jaywalking, it was the algorithm, it wasn't my fault. The algorithm,
+        is smarter than me so I trusted it..."
 
-  </details>
-</div>
-<div>
+      </details>
+    </div>
+    <div>
 
-    <h3> Features of our Algorithm that can outperform humans </h3>
+      <h3> Features of our Algorithm that can outperform humans </h3>
 
-    <ul>
-      <li> Unbiased </li>
       <ul>
-        <li>
-          
-        </li>
-      </ul>
-      <li> More accurate </li>
-      <ul>
-        <li> These algorithms can access the entire history of all legal cases ever passed through
-          the court systems.  It can make infrences, detect patterns, and have more
-          requisite knowledge than any judge could ever dream of.  Thus, this reuslts in
-          an algorithm better at making decisions than a human judge could ever be due
-          to it's ability to consider more variables and history when making its decisions.
-        </li>
-      </ul>
-      <li> Can't be bribed or threatened </li>
-      <ul>
-        <li> A mathematical formula doesn't care about the politics of any situation,
-          it has the capability to assign guilt and nothing else.
-      </ul>
-      <li> Consistent and Fair, Blind Justice </li>
-      <ul>
-        <li> Computers are very good at consistently following
-          a formula or logical progression of steps.  Unlike judges, a computer's decision
-          making isn't affected by the time of day, the local sports team's winning or losing
-          streak, or the <i>narrow bracketing</i> cognitive bias [3].
-        </li>
+        <li> More accurate </li>
+        <ul>
+          <!--
+          <li> An algorithm can access the entire history of all legal cases ever passed through
+            the court systems. It can make infrences, detect patterns, and have more
+            requisite knowledge than any judge could ever dream of. Thus, this reuslts in
+            an algorithm better at making decisions than a human judge could ever be due
+            to it's ability to consider more variables and history when making its decisions.
+          </li>
+          -->
+          <li>
+            It is a known fact in the field of actuarial data analysis that Actuarial
+            Risk Assessment Instruments (ARAIs) are a proven method that predict
+            outcomes more accurately then professional judgement alone. Thus,
+            there is already an entire field of science which is dedicated to solving
+            these types of problems from which our algorithm can draw its methods.<sup><a href="#cite-8">8</a></sup>
+          </li>
+        </ul>
+        <li> Unbiased </li>
+        <ul>
+          <li>
+            Along with being accurate, a feature of ARAIs is the trait that they
+            can be mathematically proven to not be biased. This means, our algorithm
+            can be checked scientifically to ensure that it isn't biased.<sup><a href="#cite-2">2</a></sup>
+          </li>
+        </ul>
+        <li> Can't be bribed or threatened </li>
+        <ul>
+          <li> A mathematical formula or algorithm doesn't care about the politics of any situation,
+            it has the capability to sentence guilty defendants and nothing else.
+        </ul>
+        <li> Consistent, Fair, and Blind Justice </li>
+        <ul>
+          <li> Computers are very good at consistently following
+            a formula or logical progression of steps. Unlike judges, a computer's decision
+            making isn't affected by the time of day, the local sports team's winning or losing
+            streak, or the <i>narrow bracketing</i> cognitive bias.<sup><a href="#cite-4">4</a></sup>
+          </li>
           [hello world pg75]
+        </ul>
       </ul>
-    </ul>
-    
-    [3] https://journals-sagepub-com.ezp2.lib.umn.edu/doi/pdf/10.1177/0956797612459762
+<!-- todo, probably need more than just #4 reference, need to reference all in hello world -->
 
-    <<<[hello world, pg 75]
-    Although why exactly this happens can't be pinned down, in her book Hello World, Hannah Fry 
-    begins to describe how many factors play into how human judges make their
-    decisions, "Judges with daughters are more likely to make decisions more favoriable to women[1], 
+      <<<[hello world, pg 75] Although why exactly this happens can't be pinned down, in her book Hello World, Hannah Fry begins to describe how many factors play into how human judges make their decisions, "Judges with daughters are more likely to make decisions more favoriable to women[1], 
     judges are less likely to award bail if the local sports team has lost recently. [One] famous study 
     even suggested that the time of day affects your chances of a favorable outcome[6]...
     Another famous study showed that an individual judge will avoid making too many similar judgements
     in a row.  Your chances therefore of being award bail drop off a cliff if four successful cases
-    were heard immediately before yours[64]"
+    were heard immediately before yours[64]" </div>
+        <hr>
+        <div style="width:49%; float:left; margin-right:10px; height:225px;">
+          <h3> Goals: </h3>
+          <ul>
+            <li> Prevent future crimes </li>
+            <li> Assign the minimal punishment that will prevent a criminal from re-offending </li>
+            <li> Follow the tennent of "Justice Is Blind" when making it's decisions</li>
+          </ul>
+        </div>
 
+        <div style="width:49%; float:right; margin-left:10px; height:225px;">
+          <h3> Not Goals: </h3>
+          <ul>
+            <li> Determine guilt of accused </li>
+            <!--
+            MAYBE WE DON"T INCLUDE THIS POINT OR WE DON"T INCLUDE
+          EARLIER EXAMPLE, I really like Case 1, because it shows the discrepencies in determining guilt, but I also claim
+          here that we shouldn't really be making our algorithm determine guilt, because that's a much more human thing
+          and instead we should only be focused on the discrepencies in crime.
 
+          Maybe earlier instead of saying "look at how judges can't agree on guiltiness",
+          we do a yeah, it's an issue but an issue for a later time, -> Even amongst people who
+          found her guilty, look at how big of discrepencies, some said just monetary fine, the others said JAIL
+            -->
+            <!--
+            <ul>
+              <li> Our algorithm will assume that the person has been found guilty </li>
+              <li> Determining guilt should be left up to judges and courts </li>
+            </ul>
+            -->
+            <li> Minority Report / Person of Interest style of predicting crimes before they happen </li>
+            <li> Stop first time offenders
+              <!-- [note 3: argument could be made that punishments
+            by earlier court cases could be used as deterrent, but determining if certain
+            punishments influence future crimes is incredibly hard to determine (multivariate problems)
+            so for this visualization we won't be considering this possibility]
+            -->
+            </li>
+          </ul>
+        </div>
+        <hr>
+        <div>
+          <p>
+            In order to better explain how our algorithm would work in theory the example of
+            Jim and Bill is given.
+          </p>
+          <div style="width:49%; float:left; margin-right:10px; height:275px;">
+            <h2 style="text-align:center;"> Jim: </h2>
+            <p>
+              Jim and his kid John are living below the poverty line and due to some unforseen
+              medical expenses, Jim doesn't have enough money for groceries, so he goes to a
+              gas station and steals some rice and bread. Jim normally wouldn't do this but
+              given the option between starving his child and stealing, he's going to take
+              his chances.
+            </p>
+          </div>
+          <div style="width:49%; float:right; margin-left:10px; height:275px;">
+            <h2 style="text-align:center;"> Bill: </h2>
+            <p>
+              Bill isn't in an ideal place economically, he has a mortgage and a car loan etc, but
+              he can definitely pay for his groceries and doesn't need to worry about going hungry.
+              Bill steals a candy bar and soda from the same gas station as Jim because he just
+              doesn't feel like spending the $3 to buy them.
+            </p>
+          </div>
+          <p>
+            Jim and Bill both get caught and are found guilty of stealing. Here is where our
+            algorithm comes in and decides how much of what kind of punishment each person
+            should get in order to disuade them from ever commiting another crime.
+          </p>
+          <details>
+            <summary>Notes on Below:</summary>
+            The exact punishment length or intricies don't matter. That is a detail
+            for somebody more knowledgable. The point here is, one punishment fits
+            for one type of criminal while the other is for a different type. It would
+            be the algorithms job to accurately decide, impartially, which punishment
+            would be the most likely to reduce the reoffend rate for each defendant.
+          </details>
+          <br>
+          <!--
+          [Note 4: Special note here, care is needed to MINIMIZE the time, without this
+          clause, an algorithm might quickly learn that if for any crime committed, the optimal
+          punishment is death/eternal jailtime. The algorithm would have successfully created a solution
+          where there is a 0% reoffend rate... at the cost of murdering/indefinitely jailing every single
+          person who ever commits a crime.]
+          -->
+          <img class="dec-matrix" src="./images/Reoffend-Chance-Decision-Matrix-v2.png" />
+          <p>
+            The optimal solution to the cost-matrix above is for our algorithm to put Bill away for X
+            months and for Jim to get connected with some food-stamp / free meals program as
+            this will minimize the reoffend chances for both people.
 
+            Obviously this example is very black & white and the real world isn't as cut and dry
+            as this, but figuring that out should be the job of a large, complex, algorithm
+            that can compute the best soultion better than us humans can.
+          </p>
+          <p class="power-quote2">
+            So, this idea seems pretty great right? Lucky for us, this has already
+            been implemented. Unluckily for us, it wasn't implemented well.
+            <br><br> <b>Here is COMPAS by Equivant (formerly Northpointe)</b>
+          </p>
+          <img src="./images/northpointe-logo.png" class="dec-matrix" style="margin-bottom:425px;" />
+          <p>
+            COMPAS is a prviate <i>Actuarial Risk Needs Assessment</i><sup><a href="#cite-12">12</a></sup> algorithm developed by Northpointe. It is used by by the U.S. states of
+            New York, Wisconsin, California, Florida's Broward Country, and other jurisdictions.<sup><a href="#cite-11">11</a></sup>
 
-
-    <h4> Goals: </h4>
-    <ul>
-      <li> Prevent future crimes </li>
-      <li> Assign the minimal punishment that will prevent a criminal from re-offending </li>
-    </ul>
-
-    <h4> Not Goals: </h4>
-    <ul>
-      <li> Determine guilt of accused </li> MAYBE WE DON"T INCLUDE THIS POINT OR WE DON"T INCLUDE 
-      EARLIER EXAMPLE, I really like Case 1, because it shows the discrepencies in determining guilt, but I also claim
-      here that we shouldn't really be making our algorithm determine guilt, because that's a much more human thing
-      and instead we should only be focused on the discrepencies in crime.
-      
-      Maybe earlier instead of saying "look at how judges can't agree on guiltiness",
-      we do a yeah, it's an issue but an issue for a later time, -> Even amongst people who
-      found her guilty, look at how big of discrepencies, some said just monetary fine, the others said JAIL
-      <ul>
-        <li> Our algorithm will assume that the person has been found guilty </li>
-        <li> Determining guilt should be left up to judges and courts </li>
-      </ul>
-      <li> Minority Report / Person of Interest style of predicting crimes before they happen </li>
-      <li> Stop first time offenders [note 3: argument could be made that punishments 
-        by earlier court cases could be used as deterrent, but determining if certain 
-        punishments influence future crimes is incredibly hard to determine (multivariate problems) 
-        so for this visualization we won't be considering this possibility]
-      </li>
-    </ul>
-
-    In order to better explain how our algorithm would work in theory the example of 
-    Jim and Bill is given.
-
-    Jim and his kid John are living below the poverty line and due to some unforseen
-     medical expenses, Jim doesn't have enough money for groceries, so he goes to a 
-     gas station and steals some rice and bread.  Jim normally wouldn't do this but
-      given the option between starving his child and stealing, he's going to take 
-      his chances.
-      
-    Bill isn't in an ideal place economically, he has a mortgage and a car loan etc, but
-    he can definitely pay for his groceries and doesn't need to worry about going hungry.
-    Bill steals a candy bar and soda from the same gas station as Jim because he just
-    doesn't feel like spending the $3 to buy them.
-
-    Jim and Bill both get caught and are found guilty of stealing.  Here is where our
-    algorithm comes in and decides how much of what kind of punishment each person
-    should get in order to disuade them from ever commiting another crime.
-    [Note 4: Special note here, care is needed to MINIMIZE the time, without this
-    clause, an algorithm might quickly learn that if for any crime committed, the optimal
-     punishment is death.  The algorithm would have successfully created a solution
-     where there is a 0% reoffend rate... at the cost of murdering every single
-     person who ever commits a crime.]
-
-    <img src="./images/basic-reoffend-table.png"/>
-
-    The optimal solution to the cost-matrix above is for our algorithm to put Bill away for X 
-    months and for Jim to get connected with some food-stamp / free meals program as 
-    this will minimize the reoffend chances for both people.
-
-    Obviously this example is very Black & White and the real world isn't as cut and dry 
-    as this, but figuring that out should be the job of a large, complex, algorithm 
-    that can detect patterns better than us humans can.
-
-    So, this algorithm seems pretty great right?
-    Well, if only this is how it actually worked.  Instead we have COMPAS.
-
-
-    COMPAS is a "risk-assessment" algorithm developed by Equivant and is used by some U.S. courts
-    to assess the likelyhood of a defendant re-offending.
-
-    COMPAS has been under fire since its inception for its racially biased results (pro publica
-    article here).  Although there has been counter research re-affirming that an algorithm
-    can be created to show actuarial risk can be predicted free of racial and/or gender bias"
-    (although this doesn't imply that COMPAS is one of those algorithms that does this.)
-
-    Futher reserach has brought up that COMPAS software is only slightly more accurate than
-    individuals with little or no criminal justice experience and is less accurate than
-    when those individuals answers are pooled together (63% for individual, 65% for COMPAS, 
-    67% for individuals grouped.)  Which aren't particularly inspiring statistics for
-    an algorithm which is supposed [to replace judges in sentencing](I might be straw
-    maning the opponent here, need to find a source for this)
-
-    Looking at COMPAS and comparing it to the features that we looked for before,
-    we can actually see how those features that we assumed earlier have actually
-    come to make the algorithms we have now WORSE.
-
-    <ul>
-      <li> <strike>Unbiased</strike> </li>
-      <ul>
-        <li>
-          This is only true if the training data that is provided to the algorithm is
-          unbiased as well, and because COMPAS is not open-source, we don't know what
-          data they used to train their algorithm (although it is likely that if they
-          used previous court cases as their data, that the biases and racial disparities
-          that exist in our system today was fed into the algorithm as the "norm")
-        </li>
-      </ul>
-      <li> <strike>More accurate</strike> </li>
-      <ul>
-        <li>
-          A "more accurate" algorithm allows for judges to fully rely on the algorithm
-          even if the algorithm gives what would typically be considered an "unfair" punishment.
-          Thus, if the algorithm gives a bad or biased punishment, the judge isn't held 
-          responsible for the bad decision and can instead blame the algorithm,
-        </li>
-        <li> "Oh It's not my fault that punishment was so harsh, I'm just (blindly)
-          following the algorithm"
-        </li>
-        <li>
-          One notorious exmaple where judges put a signifigant amount of faith in the
-           algorithm rather than relying on the judge's intuition can be found in a
-           case in Wisconsin where a man was found guilty of stealing an lawnmower.
-           The judge originally sentenced him to 1 year in jail, but after 
-           hearing the opinion of COMPAS, decided to double the jail sentence to 2 years.
-           A similar case was later brought to the Wisconsin Supreme Court (although 
-           the court declined to hear the case) arguing that not being able to see
-           how the algorithm had computed the defendant's risk-score (because
-           COMPAS is a private closed-source software) was a violation of due process.
-        </li>
-      </ul>
-      <li> <strike>Can't be bribed or threatened</strike> </li>
-      <ul>
-        <li>
-          COMPAS is a closed source algorithm developed by Equivant.  Thus it is 
-          immune to third-party discretion.  Thus it is impossible to determine
-          what methods were used in its programming and if there could be any 
-          intentional or unintentional problems within the program
-        </li>
-        <li>
-          This refusal to reveal the source code of COMPAS was brought up in
-          a court case Loomis v. Wisconsin, where they argued that not being able
-          to see the innerworkings of COMPAS was a violation of due process.
-        </li>
-      </ul>
-      <li> <strike>Consistent and Fair, Blind Justice</strike> </li>
-      <ul>
-        <li>
-          Consistent and Fair justice is only our goal, if the justice is actually fair.
-          In the case of COMPAS, ProPublica showed that COMPAS was racially biased, but
-          since COMPAS doesn't know that it's "normal" is actually biased, putting
-          faith in COMPAS to be Consistent and Fair when it was trained on biased data
-          only perpetuates those unfarinesses and biases more, because now the biases
-          are rooted into the algorithm as fair even though they are not
-        </li>
-        <li>
-          To have a consistent and fair algorithm, you need an even starting ground.  Because
-          COMPAS is biased, the initial starting ground isn't even, but COMPAS is pretending
-          that it is which gives the illusion that COMPAS is fair when it is only normalizing
-          the bias.
-        </li>
-      </ul>
-    </ul>
-
-
-    <p>
-      Maybe you say I'm cherry picking my data, only showing the examples where white
-      people were given low ratings and comparing them to the black people who had
-      the highest ratings and then going "oh the humanity".  Fine, lets assume I am cherry
-      picking my data and out in the results of the COMPAS algorithms there are white people
-      who got disproportionaly longer sentences than their black equivalents. THEN THERE
-      IS STILL A PROBLEM!!  It only proves my point more that the algorithms that are in use
-      today in judicial systems are unreliable, dangerous, and can perpetuate sterotypes 
-      and don't treat people fairly.  
-    </p>
-    <p>
-      And you might argue, as long as its better than how human's are doing it then its
-      good right??. NO it's not, because there is a distinct difference in how we view
-      decisions made by humans vs decisions made by machines.  We all know, humans are falliable, 
-      make mistakes, are biased, etc.  So when we see these disparities we think we can do better.
-    </p>
-    <p>
-      Now think about machines.  When a machine gives you an answer, you almost always 
-      assume that the answer the machine gave you is the correct and best answer.  We as 
-      a society place a lot of faith in machines and algorithms, and by placing our trust
-      in these COMPAS style algorithms we may be doing marginally better at giving fair
-      sentences to people, but the fear is that we will settle with the fact
-      that the machine is doing the best it absolutely can, and that any injustices or
-      racisim the machine is percieved to have (in either direction) is just a result 
-      of the "higher power" that is machine learning (see note on how no deep learning
-      people really know how their algorithms work, it's pretty much impossible to determine
-      how a deep learning model came to an answer, so we can't be sure if the machine 
-      literally found a trend or if it is perpetuating racial biases that were fed into
-      the machine at inception.)
-    </p>
-</div>
-
-    <h1> Conclusion </h1>
-
-    <h3> How do we fix This </h3>
-
-    <p>
-      <ul>
-        <li> Algorithms that decide a defendants guilt should be open source in order to allow for easy scrutiny </li>
-        
-        <li>  By making the algorithm open source, that allows us to make sure that the algorithm is trained on Non-biased data. </li>
-        
-        <li> These algorithms should be used as a tool to guide us towards making better decisions,
-        they should not be used in place of human interaction </li>
+            COMPAS has been under fire since its inception for its racially biased results.<sup><a href="#cite-1">1</a></sup> These results
+            have since been disputed by the Community Resources for Justice (CRJ). The CRJ retorts that while
+            black defendant's "danger" scores are on average greater than their white counterparts, based on the
+            courtroom records, black defendants reoffend more often than their white counterparts which implies that
+            the algorithm isn't biased ... which is technically true.
+          </p>
+          <p>
+            The danger of this statement is that while COMPAS may not be biased on its own, the data it uses
+            to make its decisions can be biased, a Dartmouth research group finds.<sup><a href="#cite-11">11</a></sup>  Basically, an unbiased algorithm can still perpetuate biases.
+          </p>
+          <p>
+            Besides the fact that COMPAS may be perpetuating biases, further research has shown that COMPAS
+            is only slightly more accurate than any random person on the street, and is less accurate when
+            using the groupped average of random individuals (63% for individual, 65% for COMPAS,
+            67% for individuals grouped).<sup><a href="#cite-10">10</a></sup> Given that the COMPAS algorithm is at
+            best as good as random indiviuals off the street, it isn't right to have professionals in
+            criminal justice rely on what is effectively equivalent to a poll of random bystanders.
+          </p>
+          <p>
+            In their research, the Dartmouth research group also showed that a two question
+            assessment can be is just accurate in
+            detecting reoffend rates as COMPAS's 137 question assessment. The fact
+            that this fancy actuarial algorithm with 137 data-points can be rivaled by
+            a 2 question assessment from two university professors makes many people
+            question the validity and "intelligence" that COMPAS boasts it has.
+            Looking at COMPAS and comparing it to the features of our optimal algorithm
+            that we created earlier, we can actually see how those features have
+             actually come to make the algorithm WORSE.
+          </p>
+        </div>
         <ul>
-          <li> Think back to the Medical cancer detection, the algorithm on its own, had 8 false positives (very bad) </li>
-          <li> Think back to the driving algorithm, it's good 99% of the time, but if the algorithms
-            tells you to go continue down a street that is flooded, the human should jump into action
-            and use it's better knowledge of the problem and not go down the flooded street </li>
+          <li> <strike>Unbiased</strike> </li>
+          <ul>
+            <li>COMPAS and any other algorithm, may not be biased. But that doesn't mean
+              it can't perpetuate a bias
+            </li>
+            <li>
+              Because COMPAS is a black-box algorithm, it is signifigantly more
+              difficult to check for bias in the algorithm or the data the
+              algorithm is trained on, because Northpointe hasn't released that data.
+              (And they are unlikely to in the future because it's their trade secret)
+            </li>
+          </ul>
+          <li> <strike>More accurate</strike> </li>
+          <ul>
+            <li>
+              Once an algorithm is deemed "more accurate" than a human, we tend to
+              instinctively believe that the algorithm is better than us, and we
+              begin to trust the algorithm without considering the algorithm could be
+              wrong.
+            </li>
+            <li>
+              If we start to believe without doubt that algorithms like COMPAS
+              are "more accurate" than judges, we start to give judges the opportunity
+              to avoid blame and responsibility by transferring it to the algorithm
+              instead.
+            </li>
+            <ul>
+              <li>
+                It is very easy to imagine a judge denying responsibility after a very harsh punishment
+                (possibly too harsh) by saying <br><i>"I didn't give that defendant
+                  a life sentence for stealing a candybar, it was the algorithm, it knows best"</i>
+              </li>
+            </ul>
+          </ul>
+          <li> <strike>Can't be bribed or threatened</strike> </li>
+          <ul>
+            <li>
+              COMPAS is a black-box algorithm developed by Equivant. Equivant is
+              not a government agency and currently there are no regulations or
+              third party audits to check the integrity of Equivant. Thus it is
+              impossible to determine
+              what methods were used in its programming and if there could be any
+              intentional or unintentional designs choices.
+            </li>
+            <li>
+              This refusal to reveal the innerworkins of COMPAS was brought up in
+              the court case <i>Loomis v. Wisconsin</i>, where Loomis argued that not being able
+              to see the innerworkings of COMPAS was a violation of due process.
+              The Wisconisn Supreme court declined to hear the case, setting a
+              dangerous precendent that algorithms like COMPAS are immune to scrutiny.
+            </li>
+            <li>
+              This is also another subtle example of how the justice system 
+              (along with prisons) are becoming more privatized.  Equivant already
+              sells prison management software, this is one more step towards
+              integrating themselves into the entire "supply chain" of prisoners.
+            </li>
+          </ul>
+          <li> <strike>Consistent, Fair, and Blind Justice</strike> </li>
+          <ul>
+            <li>
+              Fairness is difficult to define. As the CRJ group showed, COMPAS
+              is "fair" in that it doesn't discriminate based on race given the
+              training data it was provided. COMPAS is not "fair" in the way
+              most people tend to think of it though, because it enforces and
+              perpetuates the racial biases that already exist in the justice system<sup><a href="#cite-6">6</a></sup>.
+            </li>
+            <li>
+              The danger with having an algorithm be "consistent" is that it can't
+              be reactive to societal change.  For example, if we wanted to end the positive feedback
+              loop associated with race where blacks tend to get longer and harsher
+              prison sentences because they get stopped more often by police<sup><a href="#cite-14">14</a></sup>, 
+              we would have to intentionally decide that we want to give black 
+              defendants equal sentences to whites, even if the data shows
+              previous black defendants getting longer sentences.  With an
+              arbitrarily "consistent" algorithm, there would be no room to 
+              change the status quo.  This is extremely dangerous in our current
+              situation where the status quo right now disadvantages POC.
+            </li>
+            <li>
+              Arbitrary consistency can normalize biases.
+            </li>
+          </ul>
         </ul>
-        <li> Point is, the algorithms are a tool on your tool belt, not a magic black box solution to
-        racial injustice </li>
-        <li> These algorithms need to be scrutinized by anybody any time to ensure that
-        they are done in the best way possible. </li>
+
+
+        <p>
+          Maybe you say I'm cherry picking my racial data, only showing data
+          that talks about how racist these algorithms are.  
+          
+          
+          That I'm only looking at cases where white
+          people were given low ratings and comparing them to the black people who had
+          the highest ratings and then going "oh the humanity". Fine, lets assume I am cherry
+          picking my data and there are cases where the roles are flipped.  These cases,
+          if they exist, where a white person got a disproportionaly longer sentences
+           than their black equivalents. <b>THEN THERE IS STILL A PROBLEM!!</b> 
+           This proves my point that the algorithms that are in use
+          today are unreliable, dangerous, and don't treat people fairly.
+        </p>
+        <p>
+          And you might argue, as long as its better than how human's are doing it then its
+          good right??. <b>NO</b> it's not, because there is a distinct difference in how we view
+          decisions made by humans vs decisions made by machines. We all know, humans are falliable,
+          make mistakes, are biased, etc. So when we see these disparities we think we can do better.
+        </p>
+        <p>
+          Now think about machines. When a machine gives you an answer, you almost always
+          assume that the answer the machine gave you is the correct and best answer. We as
+          a society place a lot of faith in machines and algorithms.  By placing our trust
+          in these COMPAS style algorithms, we may get marginally better results.
+          The problem is that we will settle with the fact
+          that the machine is doing the best it absolutely can, and that it is doing
+          a better job than any human ever will.  So we will accept that our 
+          justice system is biased.
+        </p>
+        <p>
+          When a human is making the decision, we will doubt it, we will fight it,
+          because we know humans are falliable.  But math, algorithms, AI, machine learning,
+          that's indisputable.  If the decision is backed by math, no matter if the math
+          is founded on biased data, the incumbency of the algorithm will be much, much
+          more difficult uproot in the minds of our society if we don't take action now.
+        </p>
+    
+    <h2>Conclusion <strong><i>How Do We Move Forward</i></strong> </h2>
+    
+    <p>
+    <ol>
+      <li>
+        Algorithms that sentence defendants should be open source in order to allow for easy scrutiny
+      </li>
+      <ul>
+        <li>
+          By making the algorithm open source, that allows us to make sure that the algorithm is trained on Non-biased data and through non-biased methods.
+        </li>
       </ul>
-    </p>
-        
+      <li>
+        These algorithms should be used as a tool to guide us towards making better decisions,
+        they should not be used in place of the human element, at least not yet. 
+      </li>
+      <ul>
+        <li>  
+        Maybe in the future, a more accurate and fair algorithm will come along, and I hope it does because I have faith
+        in the power of math and algorithms to help us.  But as it is right now, 
+        if we continue down the path we're on now, algorithms are not the solution we want them to be.
+        </li>
+      </ul>
+      <li>
+      While we can't do everything a computer does, it doesn't mean that we are 
+      useless.  Recognizing the weaknesses of humans and augmenting them with
+      computer algorithms is a good idea.  Relying on computers before
+      they're sufficient to take over is what causes problems.
+      </li>
+      <ul>
+        <li>
+          Think back to PathAI's cancer detection example from earlier.  The algorithm 
+          on its own, had a bad success rate of 92%, but when used in conjunction with
+          humans, NOT as a replacement, success rate skyrocked to 99.5%
+        </li>
+        <li>
+          Also recal UPS's ORION system.  Again, the union of human and computer
+          is what makes this algorithm great.  ORION will direct properly 99.9% of the time,
+          but we still need the human to drive the physical car and make intuitive
+          decisions that ORION isn't intelligent enough to handle yet.
+       </li>
+      </ul>
+      <li> Point is, the algorithms are a tool on your tool belt, not a magic black box solution to
+        racial injustice
+      </li>
+    </ol>
 
-
-    <details>
-      <summary>Details</summary>
-      Something small enough to escape casual notice.
-    </details>
-
+    <h1> Citations </h1>
 
     COMPAS softare, cite 12 wikipedia.
     https://en.wikipedia.org/wiki/COMPAS_(software)
-    Another general criticism of machine-learning based algorithms is since they are data-dependent if the data are biased, the software will likely yield biased results.[12][page needed]
+    <!-- TODO integrate this quote below into the thing -->
+    Another general criticism of machine-learning based algorithms is since they are data-dependent if the data are biased, the software will likely yield biased results.<sup><a href="#cite-12">12</a></sup>[page needed]
 
     Studies showing that COMPAS is no more accurate than individuals with little or no criminal justic experience.
 
-    [1]: https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm
-    [3]: https://en.wikipedia.org/wiki/Blackstone%27s_ratio
-    [6] https://www.ussc.gov/sites/default/files/pdf/research-and-publications/research-publications/2017/20171114_Demographics.pdf
+    <p id="cite-1">[1] https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm </p>
+    <p id="cite-2">[2] https://www.crj.org/assets/2017/07/9_Machine_bias_rejoinder.pdf</p>
+    <p id="cite-3">[3] https://en.wikipedia.org/wiki/Blackstone%27s_ratio</p>
+    <p id="cite-4">[4] https://journals-sagepub-com.ezp2.lib.umn.edu/doi/pdf/10.1177/0956797612459762</p>
+    <p id="cite-5">[5] https://www.ups.com/us/en/services/knowledge-center/article.page?kid=aa3710c2</p>
+    <p id="cite-6">[6] https://www.ussc.gov/sites/default/files/pdf/research-and-publications/research-publications/2017/20171114_Demographics.pdf</p>
+    -> look into citation 41 hello world
 
-
+    <p id="cite-7">[7] court cases 2 Case example https://scholarlycommons.law.northwestern.edu/cgi/viewcontent.cgi?article=6026&context=jclc</p>
+    <p id="cite-8">[8] https://www.researchgate.net/publication/12564746_Clinical_Versus_Mechanical_Prediction_A_Meta-Analysis</p>
+    <p id="cite-9">[9] https://www.sentencingproject.org/wp-content/uploads/2016/01/Reducing-Racial-Disparity-in-the-Criminal-Justice-System-A-Manual-for-Practitioners-and-Policymakers.pdf</p>
+    <p id="cite-10">[10] compas is only as accurate as randoms, 137 features, try 2: https://advances.sciencemag.org/content/4/1/eaao5580</p>
+    <p id="cite-11">[11] Data saying that the algorithm doesn't need to be biased, if the data is biased. https://dl.acm.org/doi/10.1145/3022181</p>
+    <p id="cite-12">[12] https://www.equivant.com/northpointe-risk-need-assessments/#</p>
+    <p id="cite-13">[13] https://www.scotusblog.com/case-files/cases/loomis-v-wisconsin/</p>
+    <p id="cite-14">[14] https://hls.harvard.edu/content/uploads/2020/11/Massachusetts-Racial-Disparity-Report-FINAL.pdf</p>
+    <p id="cite-15">[15] Mandeep K. Dhami and Peter Ayton, 'Bailing an jailing the fast and frugal way', <i>Journal of Behavioral Decision-making</i>, vol. 14, no. 2, 2001, pp. 141-68, http://onlinelibrary.wiley.com/doi/10.1002/bdm.371/abstract</p>
+    <p id="cite-16">[16] Up to half of the judges differed in their opinion of the best course of action on any one case</p>
+    <p id="cite-17">[17] Statisticans have a way to measure this kind of consistency in judgements, called Cohen's Kappa.  It takes into accunt the fact that - even if you were just wildly guessing - you could end up being consistent by chance.  A score of one means perfect consistency.  A score of zero means you're doing no better than random.  The judges' scores ranged from zero to one and averaged 0.69.</p>
+</div>
     <br>
-    </br>
-  </div>
 </body>

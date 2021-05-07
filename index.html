@@ -1,240 +1,19 @@
 <head>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="main.css">
   <title>Algorithms Aren't The Solution, At Least Not Yet</title>
   <script src="case2.js" defer>
   </script>
   
-  <style>
-    .main {
-      width: 60%;
-      margin: 0 auto;
-    }
-    #title {
-      margin-top: 300px;
-      width: 70%;
-      font-family: 'Open Sans', sans-serif;
-    }
-    .helper-text{
-      font-size: 12px;
-      font-style: itallic;
-      font-family: 'Open Sans', sans-serif;
-    }
-    .body-text {
-      float: right;
-    }
-    sup {
-      line-height: 0;
-
-      /* The following rules (or similar) likely come from browser 
-       * style and are not needed
-       */
-      font-size: 0.83em;
-      font-family: 'Open Sans', sans-serif;
-      vertical-align: super;
-    }
-
-    .profile-box {
-      height: 390px;
-    }
-    .dec-matrix {
-      width: 75%;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .center-image {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    blockquote {
-      font-size: 20px;
-      color: #AAA;
-      font-family: 'Open Sans', sans-serif;
-      margin-left:32px;
-      border-left: 4px solid #CCC;
-      padding-left: 8px;
-    }
-    blockquote i {
-      color: #000;
-    }
-    cite {
-      margin-left: 60px;
-      font-size: 16px;
-      font-family: 'Open Sans', sans-serif;
-    }
-    p {
-      font-size: 20px;
-      font-family: 'Open Sans', sans-serif;
-    }
-    img {
-      font-size: 20px;
-      font-family: 'Open Sans', sans-serif;
-    }
-    h1 {
-      font-family: 'Open Sans', sans-serif;
-    }
-    h2 {
-      font-family: 'Open Sans', sans-serif;
-    }
-    details {
-      font-family: 'Open Sans', sans-serif;
-    }
-    summary {
-      font-family: 'Open Sans', sans-serif;
-    }
-    h1 strong {
-      display: block;
-      font-size: 75%;
-      opacity: 0.55;
-    }
-    h2 strong {
-      display: block;
-      font-size: 85%;
-      opacity: 0.55;
-    }
-    h3 {
-      font-family: 'Open Sans', sans-serif;
-    }
-    h4 {
-      font-family: 'Open Sans', sans-serif;
-    }
-    li {
-      font-size: 20px;
-      font-family: 'Open Sans', sans-serif;
-    }
-    .power-quote {
-      margin-top: 700px;
-      margin-bottom: 1000px;
-    }
-    .power-quote2 {
-      width: 55%;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-      margin-top: 400px;
-      margin-bottom: 300px;
-    }
-    .date {
-      background-image: url(images/day.png);
-      background-size: 36px;
-      width: 65736px;
-      height: 36px;
-    }
-    
-    .short-date {
-      background-image: url(images/day.png);
-      background-size: 36px;
-      width: 1080px;
-      height: 36px;
-    }
-    #caseB-long {
-      padding-top:5px;
-      padding-bottom:5px;
-      overflow-x: auto;
-      overflow-y: clip;
-      width: 100%;
-      height: 56px;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-    }
-    
-    #caseB-long::-webkit-scrollbar {
-      display: none;
-    }
-    
-    .article {
-      background-image: url(images/outbound.svg); 
-      background-position: center right;
-      background-repeat: no-repeat;
-      padding-right: 1em;
-      text-decoration: none;
-    }
-    
-    a {
-      text-decoration: none;
-    }
-    a:link {
-      color: gray;
-    }
-    a:visited {
-      color: gray;
-    }
-    a:hover {
-      color: blue;
-    }
-    a:active {
-      color: gray;
-    }
-    a:-webkit-any-link {
-      color: gray;
-    }
-    .no-after {
-      margin-block-end: 0em;
-    }
-    
-    #caseB-long-indicator {
-      font-family: 'Open Sans', sans-serif;
-      background-color: rgb(146 123 123);
-      font-size: 20px;
-      font-weight: bold;
-      display: inline-block;
-      border-radius: 10px;
-      box-shadow: 5px 4px 5px 0px;
-      padding-top: 2px;
-      padding-left: 10px;
-      padding-right: 10px;
-      padding-bottom: 14px;
-      position: -webkit-sticky;
-      position: sticky;
-      height: 15px;
-      left: 480px;
-      bottom: 30px;
-      width: 104px;
-      text-align: center;
-      margin-bottom: 5px;
-      margin-left: 400px;
-      margin-top: -5px;
-    }
-    
-    #caseB-short {
-      padding-top:5px;
-      padding-bottom:5px;
-      overflow-x: auto;
-      overflow-y: clip;
-      width: 100%;
-      height: 56px;
-    }
-    
-    #caseB-short-indicator {
-      font-family: 'Open Sans', sans-serif;
-      background-color: rgb(146 123 123);
-      font-size: 20px;
-      font-weight: bold;
-      display: inline-block;
-      border-radius: 10px;
-      box-shadow: 5px 4px 5px 0px;
-      padding-top: 2px;
-      padding-left: 10px;
-      padding-right: 10px;
-      padding-bottom: 14px;
-      position: -webkit-sticky;
-      position: sticky;
-      height: 15px;
-      left: 480px;
-      bottom: 30px;
-      width: 104px;
-      text-align: center;
-      margin-bottom: 5px;
-      margin-left: 400px;
-      margin-top: -5px;
-    }
-    
-  </style>
   <!-- TODO change RGB value of indicators-->
   <!-- outbound icon found on wikipedia -->
+  <!-- TODO add a general "future reading" page
+  * Mention icon found on wikipedia
+  * Mention code taken from mkorostoff
+  * Mention general idea taken from Hello World
+  * Mention CSCI 8980 with Daniel Keefe, UMN
+  -->
 </head>
 
 <body>
@@ -1123,7 +902,7 @@ contingent on something, typically community service or keeping a clean record)
     <p id="cite-14">[14] https://hls.harvard.edu/content/uploads/2020/11/Massachusetts-Racial-Disparity-Report-FINAL.pdf</p>
     <p id="cite-15">[15] Mandeep K. Dhami and Peter Ayton, 'Bailing an jailing the fast and frugal way', <i>Journal of Behavioral Decision-making</i>, vol. 14, no. 2, 2001, pp. 141-68, http://onlinelibrary.wiley.com/doi/10.1002/bdm.371/abstract</p>
     <p id="cite-16">[16] Up to half of the judges differed in their opinion of the best course of action on any one case</p>
-    <p id="cite-17">[17] Statisticans have a way to measure this kind of consistency in judgements, called Cohen's Kappa.  It takes into accunt the fact that - even if you were just wildly guessing - you could end up being consistent by chance.  A score of one means perfect consistency.  A score of zero means you're doing no better than random.  The judges' scores ranged from zero to one and averaged 0.69.</p>
+    <p id="cite-17">[17] Statisticans have a way to measure this kind of consistency in judgements, called Cohen's Kappa.  It takes into account the fact that - even if you were just wildly guessing - you could end up being consistent by chance.  A score of one means perfect consistency.  A score of zero means you're doing no better than random.  The judges' scores ranged from zero to one and averaged 0.69.</p>
 </div>
     <br>
 </body>

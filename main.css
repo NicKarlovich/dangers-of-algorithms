@@ -169,7 +169,7 @@ a:-webkit-any-link {
 
 #caseB-long-indicator {
   font-family: 'Open Sans', sans-serif;
-  background-color: rgb(146 123 123);
+  background-color: #b1aa8b;
   font-size: 20px;
   font-weight: bold;
   display: inline-block;
@@ -202,7 +202,7 @@ a:-webkit-any-link {
 
 #caseB-short-indicator {
   font-family: 'Open Sans', sans-serif;
-  background-color: rgb(146 123 123);
+  background-color: #b1aa8b;
   font-size: 20px;
   font-weight: bold;
   display: inline-block;

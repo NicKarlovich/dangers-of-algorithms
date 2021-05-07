@@ -1,3 +1,13 @@
+#content-desktop {display: block;}
+#content-mobile {display: none;}
+
+@media screen and (max-width: 1840px) {
+
+#content-desktop {display: none;}
+#content-mobile {display: block;}
+
+}
+
 .main {
   width: 60%;
   margin: 0 auto;
@@ -151,6 +161,10 @@ li {
   background-repeat: no-repeat;
   padding-right: 1em;
   text-decoration: none; 
+}
+
+.citation {
+  font-size: 18px;
 }
 
 a {

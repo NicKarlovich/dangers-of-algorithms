@@ -149,19 +149,19 @@ a {
   text-decoration: none;
 }
 a:link {
-  color: gray;
+  color: #CCC;
 }
 a:visited {
-  color: gray;
+  color: #CCC;
 }
 a:hover {
   color: blue;
 }
 a:active {
-  color: gray;
+  color: #CCC;
 }
 a:-webkit-any-link {
-  color: gray;
+  color: #CCC;
 }
 .no-after {
   margin-block-end: 0em;
